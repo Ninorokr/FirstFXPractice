@@ -17,9 +17,10 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="500.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane prefHeight="500.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.silverlink.firstfxpractice.HelloController">
    <children>
-      <Button fx:id="btnTest" layoutX="250.0" layoutY="250.0" mnemonicParsing="false" text="Test Button" />
+      <Button fx:id="btnTest" layoutX="212.0" layoutY="304.0" mnemonicParsing="false" onAction="#generateRandom" text="Test Button" />
+      <Label fx:id="myLabel" layoutX="140.0" layoutY="164.0" prefHeight="86.0" prefWidth="219.0" />
    </children>
    <rotationAxis>
       <Point3D />
