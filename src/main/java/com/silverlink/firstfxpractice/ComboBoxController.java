@@ -8,6 +8,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
+import javafx.scene.control.ListView;
 import org.controlsfx.control.action.Action;
 
 import java.lang.reflect.Array;
@@ -28,6 +29,8 @@ public class ComboBoxController implements Initializable {
     @FXML
     public Button btnAddItems;
 
+    public ListView<String> myListView;
+
     ObservableList<String> list = FXCollections.observableArrayList(populateList());
 
     public ArrayList<String> populateList(){
@@ -44,7 +47,8 @@ public class ComboBoxController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        //myComboBox.setItems(list);
+//        myComboBox.setItems(list);
+//        myListView.setItems(list);
     }
 
     public void comboChanged(ActionEvent event){
@@ -52,6 +56,19 @@ public class ComboBoxController implements Initializable {
     }
 
     public void ButtonCombo(ActionEvent event){
-        myComboBox.getItems().addAll("Car", "House", "School", "Juice");
+//        myComboBox.getItems().addAll("Car", "House", "School", "Juice");
+//        myListView.getItems().addAll("Car", "House", "School", "Juice"); //Adds it to ListView control
+        //You can also add the items directly to the list, the controls with update accordingly
+
+
+        ObservableList<String> names;
+        names = myListView.getSelectionModel().getSelectedItems(); //To print selected item from ListView
+        for(String name : names){
+            System.out.println(name);
+        }
+    }
+
+    public void printListViewItemList(){
+        System.out.println(myListView.getItems());
     }
 }
