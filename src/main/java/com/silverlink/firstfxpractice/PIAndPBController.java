@@ -42,10 +42,14 @@ public class PIAndPBController implements Initializable {
     }
 
     public void increase(){
+        if(progress.getProgress() > 1)
+            return;
         progress.setProgress(progress.getProgress() + .1);
     }
 
     public void decrease(){
+        if(progress.getProgress() < 0)
+            return;
         progress.setProgress(progress.getProgress() - .1);
     }
 }
