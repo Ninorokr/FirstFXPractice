@@ -32,6 +32,7 @@ public class PIAndPBController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         pbCompletion.progressProperty().set(progress.getProgress());
         piCompletion.progressProperty().set(progress.getProgress());
+        System.out.println(progress.getProgress());
         progress.progressProperty().addListener(new ChangeListener<Number>() {
             @Override
             public void changed(ObservableValue<? extends Number> observableValue, Number number, Number t1) {
@@ -45,11 +46,13 @@ public class PIAndPBController implements Initializable {
         if(progress.getProgress() > 1)
             return;
         progress.setProgress(progress.getProgress() + .1);
+        System.out.println(progress.getProgress());
     }
 
     public void decrease(){
         if(progress.getProgress() < 0)
             return;
         progress.setProgress(progress.getProgress() - .1);
+        System.out.println(progress.getProgress());
     }
 }
